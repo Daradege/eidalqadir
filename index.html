@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-    <title>Eid Al-Fitr Greeting Card</title>
+    <title>Eid Al-Ghadir Greeting Card</title>
     <style>
         * {
             font-family: 'Vazirmatn', sans-serif;
@@ -59,7 +59,7 @@
 
         .back {
             transform: rotateY(180deg);
-            background: rgb(88, 220, 224);
+            background: rgb(5, 161, 13);
             padding: 20px;
             display: flex;
             justify-content: center;
@@ -194,9 +194,9 @@
     <audio id="bgMusic" src="song.mp3" preload="auto"></audio>
     
     <div class="card" onclick="openCard()">
-        <div class="front">از طرف علی صفامنش</div>
+        <div class="front" id="name">از طرف علی صفامنش</div>
         <div class="back">
-            <img src="card.png" class="cardimage-img" alt="Eid Al-Fitr Greeting cardimage">
+            <img src="card.jpeg" class="cardimage-img" alt="Eid Al-Ghadir Greeting cardimage">
         </div>
     </div>
 
@@ -206,6 +206,16 @@
         <button onclick="adjustVolume(-0.1)">🔉</button>
         <button onclick="adjustVolume(0.1)">🔊</button>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var url_parameters = new URLSearchParams(window.location.search);
+            var name = url_parameters.get('s');
+            if (name === "s" || name === "") {
+                document.getElementById('name').textContent = "از طرف سجاد توکلی";
+            }
+        });
+    </script>
 
     <script>
         let isOpened = false;
