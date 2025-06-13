@@ -211,8 +211,13 @@
         document.addEventListener('DOMContentLoaded', function() {
             var url_parameters = new URLSearchParams(window.location.search);
             var name = url_parameters.get('s');
-            if (name === "s" || name === "") {
-                document.getElementById('name').textContent = "از طرف سجاد توکلی";
+            var st = url_parameters.get('st');
+            if (st === "s" || st === "") {
+                document.getElementById('name').innerHTML = "از طرف سجاد توکلی<br>برای یگانه";
+            } else if (name === "st" || name === "") {
+                document.getElementById('name').innerHTML = "از طرف سجاد توکلی";
+            } else {
+                document.getElementById('name').innerHTML = "از طرف علی صفامنش";
             }
         });
     </script>
